@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guest House - Booking</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <h1>Book Your Stay</h1>
+</header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="rooms.html">Rooms & Amenities</a>
+    <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
+</nav>
+<section class="container">
+    <h2>Reservation Form</h2>
+    <form id="bookingForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType" required>
+            <option value="">Select Room Type</option>
+            <option value="Standard">Standard Room</option>
+            <option value="Deluxe">Deluxe Suite</option>
+        </select>
+
+        <label for="checkIn">Check-In Date:</label>
+        <input type="date" id="checkIn" name="checkIn" required />
+
+        <label for="checkOut">Check-Out Date:</label>
+        <input type="date" id="checkOut" name="checkOut" required />
+
+        <label for="guests">Number of Guests:</label>
+        <input type="number" id="guests" name="guests" min="1" max="10" required />
+
+        <button type="submit">Book Now</button>
+    </form>
+    
+    <div id="confirmation" style="display:none; margin-top:20px; background:#e0ffe0; padding:15px; border-radius:8px;">
+        <h3>Thank you for your booking!</h3>
+        <p>Contact Phone number to confirm resevation and provide proof of payment</p>
+    </div>
+</section>
+
+<script>
+// Handle form submission
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Here you would typically send form data to the server
+    // For demonstration, we'll show a confirmation message
+    document.getElementById('bookingForm').style.display = 'none';
+    document.getElementById('confirmation').style.display = 'block';
+
+    // Optionally, send data to backend via AJAX (fetch)
+    /*
+    fetch('/api/bookings', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            roomType: document.getElementById('roomType').value,
+            checkIn: document.getElementById('checkIn').value,
+            checkOut: document.getElementById('checkOut').value,
+            guests: document.getElementById('guests').value
+        })
+    }).then(response => response.json())
+      .then(data => {
+          // Show confirmation
+      });
+    */
+});
+</script>
+<footer>
+    <p>&copy; 2025 Hideway Guest House. All rights reserved.</p>
+</footer>
+</body>
+</html>
