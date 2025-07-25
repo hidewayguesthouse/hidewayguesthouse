@@ -159,9 +159,7 @@ header {
 
 /* Optional: enhance header with a subtle gradient or pattern */
 header {
-    /* Uncomment below for gradient background
     background: linear-gradient(135deg, #2c3e50, #34495e);
-    */
 }
 
 /* Style the header h1 */
