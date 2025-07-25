@@ -144,30 +144,3 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* Add a decorative top section for visual appeal */
-.header-visual {
-    height: 250px; /* adjust height as needed */
-    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-bottom: 2px solid #1abc9c;
-    /* Optional: add a subtle pattern or texture overlay */
-    /* background-image: url('your-pattern.png'); */
-}
-
-/* Style the text inside the visual header */
-.header-visual h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.header-visual p {
-    font-size: 1.2em;
-}
