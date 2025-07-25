@@ -143,20 +143,3 @@ footer {
 html {
     scroll-behavior: smooth;
 }
-
-
-/* Top picture section styles */
-.top-image-section {
-    width: 100%;
-    overflow: hidden;
-}
-
-.top-image-section img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 400px; /* optional, for consistent height */
-    object-fit: cover;
-    /* Optional: add a slight zoom effect or overlay */
-    /* filter: brightness(0.9); */
-}
