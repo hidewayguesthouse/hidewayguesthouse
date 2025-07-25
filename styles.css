@@ -143,3 +143,40 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+
+
+/* Stylish header style */
+header {
+    background-color: #2c3e50; /* dark blue-gray background */
+    color: #fff; /* white text */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+}
+
+/* Optional: enhance header with a subtle gradient or pattern */
+header {
+    /* Uncomment below for gradient background
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    */
+}
+
+/* Style the header h1 */
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Add a decorative underline or separator if desired */
+header::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #1abc9c; /* accent color */
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
