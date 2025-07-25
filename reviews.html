@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hideaway Guest House - Reviews</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* Additional styles for reviews page */
+body {
+  background-color: #f4f4f4;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+header h1 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #34495e;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav a {
+  color: #fff;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: 600;
+}
+nav a:hover, nav a.active {
+  background-color: #1abc9c;
+  transform: scale(1.05);
+}
+section {
+  margin-bottom: 40px;
+}
+section h2 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+section p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.5;
+}
+#reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+.card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+.rating {
+  font-size: 1.2em;
+  color: #f39c12;
+  margin: 5px 0;
+}
+.review-text {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 10px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+}
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+@media(max-width: 768px) {
+  #reviews-container {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+}
+button {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+}
+button:hover {
+  background-color: #2ecc71;
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Hideaway Guest House - Customer Reviews</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="rooms.html">Rooms & Amenities</a>
+    <a href="booking.html">Booking</a>
+    <a href="contact.html">Contact</a>
+    <a href="reviews.html" class="active">Reviews</a>
+</nav>
+
+<div class="container">
+    <section>
+        <h2>What Our Guests Say</h2>
+        <p>Since 2010, thousands of guests from around the world have shared their experiences. Here are some recent reviews highlighting their stay at Hideaway Guest House.</p>
+    </section>
+
+    <section id="reviews-container"></section>
+
+    <div style="text-align:center; margin-top:30px;">
+        <button id="loadMoreBtn">Please request review link if you want to leave a review.</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2010-2025 Hideaway Guest House. All rights reserved.</p>
+</footer>
+
+<script>
+// Updated reviews data with 10 unique reviews for Hideaway Guest House
+const reviewsData = [
+  {
+    name: "Emily R.",
+    comment: "My stay at Hideaway Guest House in spring 2025 was unforgettable. The staff was friendly, rooms were spotless, and the hospitality was outstanding. Highly recommended!",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/women/45.jpg"
+  },
+  {
+    name: "James T.",
+    comment: "Visited in summer 2023. The location is perfect, and the service at Hideaway Guest House exceeded my expectations. Will come back!",
+    rating: 4,
+    photo: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    name: "Sophia L.",
+    comment: "I stayed at Hideaway Guest House recently. The rooms are cozy, and the breakfast was delicious. A wonderful experience overall.",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/women/22.jpg"
+  },
+  {
+    name: "Michael B.",
+    comment: "My visit was fantastic. The staff went above and beyond to make my stay comfortable. Highly recommend Hideaway Guest House!",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/men/54.jpg"
+  },
+  {
+    name: "Olivia K.",
+    comment: "During my trip, I stayed at Hideaway Guest House. The amenities are top-notch, and the service is impeccable. Will return!",
+    rating: 4,
+    photo: "https://randomuser.me/api/portraits/women/51.jpg"
+  },
+  {
+    name: "Liam P.",
+    comment: "Excellent experience! Hideaway Guest House truly deserves its name. The rooms are clean and the staff is very welcoming.",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/men/45.jpg"
+  },
+  {
+    name: "Ava S.",
+    comment: "I loved my stay at Hideaway Guest House. The location was convenient, and the staff made me feel at home.",
+    rating: 4,
+    photo: "https://randomuser.me/api/portraits/women/30.jpg"
+  },
+  {
+    name: "Benjamin H.",
+    comment: "Visiting in 2017 was a great experience. The service was excellent, and the rooms were very comfortable.",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/men/65.jpg"
+  },
+  {
+    name: "Mia D.",
+    comment: "A wonderful place to stay. Hideaway Guest House offers excellent value and superb hospitality.",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/women/40.jpg"
+  },
+  {
+    name: "Noah G.",
+    comment: "My family loved our stay. The staff made us feel special, and the rooms were spacious and clean.",
+    rating: 5,
+    photo: "https://randomuser.me/api/portraits/men/80.jpg"
+  }
+];
+
+const reviewsContainer = document.getElementById('reviews-container');
+
+reviewsData.forEach(review => {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  card.innerHTML = `
+    <div class="profile">
+      <img src="${review.photo}" alt="${review.name}"/>
+      <div>
+        <h3>${review.name}</h3>
+        <div class="rating">${'★ '.repeat(review.rating)}${'☆ '.repeat(5 - review.rating)}</div>
+      </div>
+    </div>
+    <div class="review-text">
+      <p>${review.comment}</p>
+    </div>
+  `;
+  reviewsContainer.appendChild(card);
+});
+</script>
+</body>
+</
